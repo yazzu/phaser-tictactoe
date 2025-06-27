@@ -2,6 +2,7 @@ const config = {
     type: Phaser.AUTO,
     width: 300,
     height: 400,
+    backgroundColor: 0xffffff, // Add this line for white background
     scene: {
         preload: preload,
         create: create
