@@ -32,10 +32,16 @@ function create () {
     gameOver = false;
 
     // Draw the grid
-    this.add.line(0, 100, 300, 100, 0x000000).setOrigin(0, 0);
-    this.add.line(0, 200, 300, 200, 0x000000).setOrigin(0, 0);
-    this.add.line(100, 0, 100, 300, 0x000000).setOrigin(0, 0);
-    this.add.line(200, 0, 200, 300, 0x000000).setOrigin(0, 0);
+    const graphics = this.add.graphics();
+    graphics.lineStyle(2, 0x000000); // 2 pixels thick, black color
+
+    // Horizontal lines
+    graphics.lineBetween(0, 100, 300, 100);
+    graphics.lineBetween(0, 200, 300, 200);
+
+    // Vertical lines
+    graphics.lineBetween(100, 0, 100, 300);
+    graphics.lineBetween(200, 0, 200, 300);
 
     // Add text for player turn and result
     playerText = this.add.text(10, 310, 'Player: ' + currentPlayer, { fontSize: '24px', fill: '#000' });
